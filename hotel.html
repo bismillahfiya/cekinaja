@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Detail</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: #f8f9fa;
+        color: #333;
+      }
+
+      .hotel__container {
+        max-width: 400px;
+        margin: 1rem auto;
+        padding: 1rem;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Back Button */
+      .back__btn {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #007b8f;
+      }
+
+      /* Hotel Image */
+      .hotel__image img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+      }
+
+      /* Address */
+      .hotel__address {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: #007b8f;
+        margin-bottom: 1rem;
+      }
+
+      /* Description */
+      .hotel__description {
+        margin: 1rem 0;
+      }
+
+      /* Facilities */
+      .facilities {
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem 0;
+      }
+
+      .facility {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #007b8f;
+      }
+
+      .facility i {
+        font-size: 1.5rem;
+      }
+
+      /* Reviews */
+      .reviews h3 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .review__list {
+        margin: 1rem 0;
+      }
+
+      .review {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .review img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .more__btn {
+        display: block;
+        margin: 0 auto;
+        background-color: #007b8f;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      .more__btn:hover {
+        background-color: #005f6a;
+      }
+
+      /* Price and Button */
+      .price__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1rem;
+      }
+
+      .price__container p {
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .book__btn {
+        background-color: #007b8f;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+
+      .book__btn:hover {
+        background-color: #005f6a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hotel__container">
+      <button class="back__btn">
+        <i class="ri-arrow-left-line"></i>
+      </button>
+
+      <!-- Gambar Hotel -->
+      <div class="hotel__image">
+        <img
+          src="assets/hotel-1.jpg"
+          alt="The Plaza Hotel"
+        />
+      </div>
+
+      <h2>The Plaza Hotel</h2>
+      <p class="hotel__address">
+        <i class="ri-map-pin-2-line"></i>
+        Jl. Agil Kusumadya No. 100, Jatikumkr, Jati Wetan, Jati, Kudus
+      </p>
+
+      <!-- Deskripsi -->
+      <h3>Deskripsi</h3>
+      <p class="hotel__description">
+        Hotel Griptha memiliki banyak fasilitas seperti The Flamingoooohzee
+        Restaurant, Teman Canda Cafe, Majesty Palace Grand Ballroom, 7 ruang
+        pertemuan, kolam renang, pusat kebugaran, tempat parkir luas, akses
+        WIFI gratis.
+      </p>
+
+      <!-- Fasilitas -->
+      <h3>Fasilitas</h3>
+      <div class="facilities">
+        <div class="facility">
+          <i class="ri-wifi-line"></i>
+          <p>WiFi</p>
+        </div>
+        <div class="facility">
+          <i class="ri-restaurant-line"></i>
+          <p>Restaurant</p>
+        </div>
+        <div class="facility">
+          <i class="ri-parking-box-line"></i>
+          <p>Parking</p>
+        </div>
+        <div class="facility">
+          <i class="ri-swimming-pool-line"></i>
+          <p>Pool</p>
+        </div>
+      </div>
+
+      <!-- Ulasan -->
+      <div class="reviews">
+        <h3>Ulasan <span>⭐ 4.4 (57 rb)</span></h3>
+        <div class="review__list">
+          <div class="review">
+            <img src="assets/intan.jpg" alt="User 1" />
+            <p>Intan Noviyanti</p>
+          </div>
+          <div class="review">
+            <img src="assets/client-2.jpg" alt="User 2" />
+            <p>Intan Nabila Hilma</p>
+          </div>
+          <div class="review">
+            <img src="assets/foto.jpg" alt="User 3" />
+            <p>Fatma Meylinda Putri</p>
+          </div>
+          <div class="review">
+            <img src="assets/client-2.jpg" alt="User 4" />
+            <p>Lutfiya Rahmatika Sari</p>
+          </div>
+        </div>
+        <button class="more__btn">More</button>
+      </div>
+
+      <!-- Harga dan Book Button -->
+      <div class="price__container">
+        <p>Rp 350.000/night</p>
+        <button class="book__btn" onclick="window.location.href = 'booking.html';">
+            Book now
+          </button>
+          
+      </div>
+    </div>
+  </body>
+</html>
