@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="booking.css" />
+  </head>
+  <body>
+    <!-- Frame 553: Booking Form -->
+    <div class="frame" id="frame-553">
+      <h2>Booking Form</h2>
+      <label for="calendar">Select Dates</label>
+      <input type="date" id="checkin" />
+      <input type="date" id="checkout" />
+      <label>Room Type</label>
+      <select>
+        <option>Deluxe</option>
+        <option>Superior</option>
+      </select>
+      <div class="counter">
+        <label>Guest</label>
+        <button onclick="changeCount('guest', -1)">-</button>
+        <span id="guest-count">1</span>
+        <button onclick="changeCount('guest', 1)">+</button>
+      </div>
+      <p>Total: <span id="total-price">Rp 350.000</span></p>
+      <button onclick="navigateTo('frame-554')">Continue</button>
+    </div>
+
+    <!-- Frame 554: User Info -->
+    <div class="frame" id="frame-554" style="display: none">
+      <h2>Booking Form</h2>
+      <label>First Name</label>
+      <input type="text" placeholder="First Name" />
+      <label>Surname</label>
+      <input type="text" placeholder="Surname" />
+      <label>Email</label>
+      <input type="email" placeholder="Email" />
+      <label>Phone</label>
+      <input type="tel" placeholder="+62..." />
+      <button onclick="navigateTo('frame-555')">Continue</button>
+    </div>
+
+    <!-- Frame 555: Booking Summary -->
+    <div class="frame" id="frame-555" style="display: none">
+      <h2>Booking Summary</h2>
+      <p>Name: Fatma Meylinda</p>
+      <p>Email: meylinda922@gmail.com</p>
+      <p>Room: Deluxe</p>
+      <p>Check-in: Apr 19</p>
+      <p>Check-out: Apr 21</p>
+      <p>Guests: 1</p>
+      <p>Total: Rp 350.000</p>
+      <button onclick="navigateTo('frame-556')">Confirm Payment</button>
+    </div>
+
+    <!-- Frame 556: Payment -->
+    <div class="frame" id="frame-556" style="display: none">
+      <h2>Payment</h2>
+      <label>Credit Card</label>
+      <input type="text" placeholder="1234 5678 9876 5432" />
+      <label>Other Payment Methods</label>
+      <button>Paypal</button>
+      <button>Apple Pay</button>
+      <button onclick="navigateTo('frame-558')">Continue</button>
+    </div>
+
+    <!-- Frame 558: Payment Success -->
+    <div class="frame" id="frame-558" style="display: none">
+      <h2>Payment Successful!</h2>
+      <button onclick="navigateTo('frame-566')">View Booking Ticket</button>
+    </div>
+
+    <!-- Frame 566: Ticket -->
+    <div class="frame" id="frame-566" style="display: none">
+      <h2>Ticket</h2>
+      <p>Booking ID: 00-W9R53QF</p>
+      <p>Room: Deluxe</p>
+      <p>Guests: 1</p>
+      <p>Check-in: Apr 19</p>
+      <p>Check-out: Apr 21</p>
+      <button>Download Ticket</button>
+    </div>
+
+    <script>
+      function navigateTo(frame) {
+        document.querySelectorAll(".frame").forEach((el) => {
+          el.style.display = "none";
+        });
+        document.getElementById(frame).style.display = "block";
+      }
+
+      function changeCount(id, change) {
+        let element = document.getElementById(`${id}-count`);
+        let current = parseInt(element.innerText);
+        let newCount = Math.max(1, current + change);
+        element.innerText = newCount;
+      }
+    </script>
+  </body>
+</html>
